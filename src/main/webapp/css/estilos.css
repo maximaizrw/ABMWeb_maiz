@@ -1,0 +1,36 @@
+
+
+.bg-color { 
+    background-color: #222C43;  
+}
+
+.btn-custom {
+    background-color: #222C43;
+    color: #fff;
+}
+
+.btn-custom:hover {
+    background-color: #6FE076;
+    color: #fff;
+}
+
+.logout-link {
+    color: #6FE076;
+}
+
+
+.contenido {border: 1px solid black ;}
+.edit{color: #FFC107;}
+.delete{color: #E34724;}
+
+.blur-background {
+    background: url('https://img.freepik.com/free-photo/abstract-luxury-plain-blur-grey-black-gradient-used-as-background-studio-wall-display-your-products_1258-63641.jpg?w=1380&t=st=1698753196~exp=1698753796~hmac=c2817012db43ce821ab3290f2501de23f5415f9a125e5efb915f08950848188e') center/cover no-repeat fixed;
+    filter: blur(10px); /* Ajusta el valor de blur según tu preferencia */
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
