@@ -1,0 +1,55 @@
+-- DROP SCHEMA sistema;
+
+CREATE SCHEMA sistema AUTHORIZATION postgres;
+
+-- DROP SEQUENCE sistema.tipo_usuario_id_seq;
+
+CREATE SEQUENCE sistema.tipo_usuario_id_seq
+	INCREMENT BY 1
+	MINVALUE 1
+	MAXVALUE 2147483647
+	START 1
+	CACHE 1
+	NO CYCLE;
+-- DROP SEQUENCE sistema.usuario_id_seq;
+
+CREATE SEQUENCE sistema.usuario_id_seq
+	INCREMENT BY 1
+	MINVALUE 1
+	MAXVALUE 2147483647
+	START 1
+	CACHE 1
+	NO CYCLE;-- sistema.tipo_usuario definition
+
+-- Drop table
+
+-- DROP TABLE tipo_usuario;
+
+CREATE TABLE tipo_usuario (
+	id serial4 NOT NULL,
+	descripcion varchar(20) NOT NULL,
+	CONSTRAINT tipo_usuario_pkey PRIMARY KEY (id)
+);
+
+
+-- sistema.usuario definition
+
+-- Drop table
+
+-- DROP TABLE usuario;
+
+CREATE TABLE usuario (
+	id serial4 NOT NULL,
+	nombre varchar(255) NOT NULL,
+	apellido varchar(255) NOT NULL,
+	alias varchar(50) NOT NULL,
+	contraseña varchar(255) NOT NULL,
+	email_principal varchar(255) NOT NULL,
+	email_secundario varchar(255) NULL,
+	nro_celular int4 NOT NULL,
+	tipo_usuario_id int4 NOT NULL,
+	fecha_alta date NOT NULL,
+	fecha_baja date NULL,
+	CONSTRAINT usuario_pkey PRIMARY KEY (id),
+	CONSTRAINT usuario_fk FOREIGN KEY (tipo_usuario_id) REFERENCES tipo_usuario(id)
+);
